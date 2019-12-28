@@ -10,8 +10,23 @@
 // +----------------------------------------------------------------------
 use think\facade\Route;
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP6!';
-});
 
-Route::get('hello/:name', 'index/hello');
+/*
+//index控制器
+Route::group('', function () {
+    Route::get('/', 'index');
+    Route::get(':name', 'hello');
+})->prefix('home.index/')->ext('html');
+
+//article控制器
+Route::group('article',function (){
+   Route::get('/','index');
+
+})->prefix('home.article/');
+
+//依次类推
+//后台目录下的 依次类推
+Route::group('admin',function (){
+    Route::get('/','index');
+
+})->prefix('admin.index/');*/
