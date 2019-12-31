@@ -16,11 +16,8 @@ class Check
      */
     public function handle($request, \Closure $next)
     {
-        if ($request->param('name') != 'think') {
-            Log::debug(json_encode($request));
-            Log::debug(json_encode($next));
-//            return redirect('http://www.baidu.com');
-        }
+//        Log::record($request,'info');
+        Log::write($request,'info');
         return $next($request);
     }
 }
